@@ -1,6 +1,6 @@
 import React from 'react';
 import LogItem from './LogItem';
-import { Grid } from '@material-ui/core';
+import { List } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -10,24 +10,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-// Use List Component from MaterialUI instead of card
+// Use List Component from MaterialUI instead of card item
 const LogList = () => {
     const classes = useStyles();
     return (
-        <Grid container direction="column">
-            <Grid item >
-                <LogItem />
-            </Grid>
-            <Grid item >
-                <LogItem />
-            </Grid>
-            <Grid item >
-                <LogItem />
-            </Grid>
-            <Grid item >
-                <LogItem />
-            </Grid>
-        </Grid>
+        <List disablePadding>
+            <LogItem />
+            <LogItem />
+            <LogItem />
+        </List>
     );
 }
 

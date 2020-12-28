@@ -7,8 +7,8 @@ const SearchItem = () => {
         <Card variant="outlined">
             <Grid container direction="row">
                 <Typography >Search Item</Typography>
-                <Button variant="outlined" color="primary">Log Food</Button>
-                <Button variant="outlined" color="secondary">Add to Recipe</Button>
+                <Button variant="outlined" color="Primary" edge="end">Log Food</Button>
+                <Button variant="outlined" color="secondary" edge="end">Add to Recipe</Button>
             </Grid>
 
         </Card>
