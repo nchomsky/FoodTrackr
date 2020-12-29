@@ -1,15 +1,15 @@
 import React from 'react';
-import { Card, Typography, Button, Grid } from '@material-ui/core';
+import { Card, Typography, Button, Grid, CardHeader, CardActions } from '@material-ui/core';
 
 const SearchItem = () => {
     return (
 
         <Card variant="outlined">
-            <Grid container direction="row">
-                <Typography >Search Item</Typography>
-                <Button variant="outlined" color="Primary" edge="end">Log Food</Button>
-                <Button variant="outlined" color="secondary" edge="end">Add to Recipe</Button>
-            </Grid>
+            <CardHeader title="Search Item" subheader="Protein: 5g Carbohydrates: 12g Fat: 6g" />
+            <CardActions>
+                <Button variant="outlined" color="Primary" size="small" >Log Food</Button>
+                <Button variant="outlined" color="secondary" size="small" >Add to Recipe</Button>
+            </CardActions>
 
         </Card>
 
