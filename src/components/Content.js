@@ -17,7 +17,7 @@ const Content = () => {
         const response = await foodData.get('foods/search', {
             params: {
                 api_key: KEY,
-                query: 'jif Peanut Butter',
+                query: term,
                 pageSize: 4
             }
         });
@@ -26,7 +26,7 @@ const Content = () => {
 
     // Set the default parameter as an empty array so that it only rerenders the component once
     // Made the mistake of not doing this and got stuck in an infinite loop and timed out my api
-    useEffect(onSearchSubmit, []);
+    // useEffect(onSearchSubmit, []);
 
 
     return (
@@ -36,7 +36,7 @@ const Content = () => {
                 <SearchList results={searchResults} />
             </Grid>
             <Grid item xs={6}>
-                <FoodLog />
+                <FoodLog log={foodLog} />
             </Grid>
         </Grid>
     );

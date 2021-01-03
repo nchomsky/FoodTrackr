@@ -3,8 +3,9 @@ import { Card, Typography, Button, Grid, CardHeader, CardActions } from '@materi
 
 const SearchItem = ({ result }) => {
 
-    return (
+    const protein = '';
 
+    return (
         <Card variant="outlined">
             <CardHeader title={result.lowercaseDescription} subheader={result.brandOwner} />
             <CardActions>

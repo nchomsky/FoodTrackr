@@ -20,16 +20,30 @@ const useStyles = makeStyles((theme) => ({
 
 // Add Date below Food Log title so you can choose which date you are viewing
 
-const FoodLog = () => {
+const FoodLog = ({ log }) => {
     const classes = useStyles();
+
+    const renderContent = () => {
+        if (log.length === 0) {
+            return (
+                <CardContent>
+                    <Typography style={{ textAlign: 'center' }}>Start Adding food to log what you've eaten!</Typography>
+                </CardContent>
+            );
+        } else {
+            return (
+                <CardContent className={classes.disablePadding}>
+                    {<LogList />}
+                </CardContent>
+            );
+        }
+    }
+
     return (
         <Card elevation={3} className={classes.marginLog}>
             <CardHeader title="Food Log" style={{ textAlign: 'center' }} />
             <Divider />
-            <CardContent className={classes.disablePadding}>
-                {/* <Typography style={{ textAlign: 'center' }}>Start Adding food to log what you've eaten!</Typography> */}
-                <LogList />
-            </CardContent>
+            {renderContent()}
         </Card>
 
     );
