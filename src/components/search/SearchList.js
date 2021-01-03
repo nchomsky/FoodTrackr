@@ -9,22 +9,19 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const SearchList = () => {
+const SearchList = ({ results }) => {
     const classes = useStyles();
+    console.log(results);
+    const renderItems = results.map(result => {
+        return (
+            <Grid item className={classes.marginItem} >
+                <SearchItem key={result.key} result={result} />
+            </Grid>
+        );
+    });
     return (
         <Grid container direction="column">
-            <Grid item className={classes.marginItem} >
-                <SearchItem />
-            </Grid>
-            <Grid item className={classes.marginItem} >
-                <SearchItem />
-            </Grid>
-            <Grid item className={classes.marginItem} >
-                <SearchItem />
-            </Grid>
-            <Grid item className={classes.marginItem} >
-                <SearchItem />
-            </Grid>
+            {renderItems}
         </Grid>
     );
 }
