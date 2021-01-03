@@ -10,12 +10,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchBar = (props) => {
-    const classes = useStyles();
     const [term, setTerm] = useState('');
+    const classes = useStyles();
 
-    const onInputChange = (event) => {
-        setTerm(term = event.target.value);
-    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -26,7 +23,7 @@ const SearchBar = (props) => {
     return (
         <div>
             <form className={classes.marginSearchBar} onSubmit={onFormSubmit} noValidate autoComplete="off">
-                <TextField fullWidth id="outlined-basic" label="Search for Food" variant="outlined" value={term} onChange={onInputChange} />
+                <TextField fullWidth id="outlined-basic" label="Search for Food" variant="outlined" value={term} onChange={event => setTerm(event.target.value)} />
             </form>
         </div>
     );
