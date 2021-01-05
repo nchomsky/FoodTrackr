@@ -11,13 +11,19 @@ const useStyles = makeStyles((theme) => ({
 
 
 // Use List Component from MaterialUI instead of card item
-const LogList = () => {
+const LogList = ({ log }) => {
     const classes = useStyles();
+
+    console.log(log);
+    const renderItems = log.map(item => {
+        return (
+            <LogItem key={item.key} result={item} />
+        );
+    });
+
     return (
         <List disablePadding>
-            <LogItem />
-            <LogItem />
-            <LogItem />
+            {renderItems}
         </List>
     );
 }

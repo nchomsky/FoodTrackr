@@ -9,13 +9,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const SearchList = ({ results }) => {
+const SearchList = ({ results, onLogHandler }) => {
     const classes = useStyles();
     console.log(results);
     const renderItems = results.map(result => {
         return (
             <Grid item className={classes.marginItem} >
-                <SearchItem key={result.key} result={result} />
+                <SearchItem key={result.key} result={result} onLogHandler={onLogHandler} />
             </Grid>
         );
     });

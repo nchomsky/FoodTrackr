@@ -11,16 +11,20 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const SearchItem = ({ result }) => {
+const SearchItem = ({ result, onLogHandler }) => {
     const classes = useStyles();
 
     const protein = result.foodNutrients.find(nutrient => nutrient.nutrientId === 1003);
     const carbs = result.foodNutrients.find(nutrient => nutrient.nutrientId === 1005);
     const fat = result.foodNutrients.find(nutrient => nutrient.nutrientId === 1004);
 
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     return (
         <Card variant="outlined">
-            <CardHeader title={result.lowercaseDescription} subheader={result.brandOwner} />
+            <CardHeader title={capitalizeFirstLetter(result.lowercaseDescription)} subheader={result.brandOwner} />
             <CardContent className={classes.disablePadding}>
                 <Typography variant="body2">
                     {`Fat: ${fat ? fat.value : '0'}g `}
@@ -29,7 +33,7 @@ const SearchItem = ({ result }) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button variant="outlined" color="primary" size="small" >Log Food</Button>
+                <Button variant="outlined" color="primary" size="small" onClick={() => onLogHandler([result])} >Log Food</Button>
                 {/* <Button variant="outlined" color="secondary" size="small" >Add to Recipe</Button> */}
             </CardActions>
 

@@ -31,9 +31,10 @@ const FoodLog = ({ log }) => {
                 </CardContent>
             );
         } else {
+            console.log(log);
             return (
                 <CardContent className={classes.disablePadding}>
-                    {<LogList />}
+                    {<LogList log={log} />}
                 </CardContent>
             );
         }

@@ -24,16 +24,18 @@ const Content = () => {
         setSearchResults(searchResults => searchResults = response.data.foods);
     };
 
+    const logFoodHandler = (food) => {
+        setFoodLog(prevFoodLog => [...prevFoodLog, food]);
+    }
+
     // Set the default parameter as an empty array so that it only rerenders the component once
     // Made the mistake of not doing this and got stuck in an infinite loop and timed out my api
     // useEffect(onSearchSubmit, []);
-
-
     return (
         <Grid container spacing={2}>
             <Grid item xs={6}>
                 <SearchBar onFormSubmit={onSearchSubmit} />
-                <SearchList results={searchResults} />
+                <SearchList results={searchResults} onLogHandler={logFoodHandler} />
             </Grid>
             <Grid item xs={6}>
                 <FoodLog log={foodLog} />
