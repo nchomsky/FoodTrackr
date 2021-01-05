@@ -21,7 +21,7 @@ const Content = () => {
                 pageSize: 4
             }
         });
-        setSearchResults(searchResults => searchResults = response.data.foods);
+        setSearchResults(prevResults => prevResults = response.data.foods);
     };
 
     const logFoodHandler = (food) => {
