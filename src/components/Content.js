@@ -47,11 +47,11 @@ const Content = () => {
 
     return (
         <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
                 <SearchBar onFormSubmit={onSearchSubmit} />
                 <SearchList results={searchResults} onLogHandler={logFoodHandler} />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
                 <FoodLog log={foodLog} deleteFoodHandler={deleteFoodHandler} />
             </Grid>
         </Grid>
