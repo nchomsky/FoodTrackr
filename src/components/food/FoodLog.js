@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 // Add Date below Food Log title so you can choose which date you are viewing
 
-const FoodLog = ({ log }) => {
+const FoodLog = ({ log, deleteFoodHandler }) => {
     const classes = useStyles();
 
     const renderContent = () => {
@@ -31,10 +31,9 @@ const FoodLog = ({ log }) => {
                 </CardContent>
             );
         } else {
-            console.log(log);
             return (
                 <CardContent className={classes.disablePadding}>
-                    {<LogList log={log} />}
+                    {<LogList log={log} deleteFoodHandler={deleteFoodHandler} />}
                 </CardContent>
             );
         }

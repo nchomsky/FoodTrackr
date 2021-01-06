@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
 import SearchBar from './search/SearchBar';
 import SearchList from './search/SearchList';
@@ -25,12 +25,26 @@ const Content = () => {
     };
 
     const logFoodHandler = (food) => {
-        setFoodLog(prevFoodLog => [...prevFoodLog, food]);
+        setFoodLog(prevFoodLog => prevFoodLog.concat(food));
+    }
+
+    const deleteFoodHandler = (food) => {
+        const array = [...foodLog];
+        console.log('%c Array in Delete Handler', 'color: red; font-weight: bold;');
+        console.log(array);
+        const index = array.indexOf(food);
+        if (index !== -1) {
+            array.splice(index, 1);
+            setFoodLog(array);
+        }
     }
 
     // Set the default parameter as an empty array so that it only rerenders the component once
     // Made the mistake of not doing this and got stuck in an infinite loop and timed out my api
     // useEffect(onSearchSubmit, []);
+    console.log('%c Content FoodLog', 'color:orange; font-weight:bold;')
+    console.log(foodLog);
+
     return (
         <Grid container spacing={2}>
             <Grid item xs={6}>
@@ -38,7 +52,7 @@ const Content = () => {
                 <SearchList results={searchResults} onLogHandler={logFoodHandler} />
             </Grid>
             <Grid item xs={6}>
-                <FoodLog log={foodLog} />
+                <FoodLog log={foodLog} deleteFoodHandler={deleteFoodHandler} />
             </Grid>
         </Grid>
     );

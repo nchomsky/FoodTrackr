@@ -11,13 +11,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 // Use List Component from MaterialUI instead of card item
-const LogList = ({ log }) => {
+const LogList = ({ log, deleteFoodHandler }) => {
     const classes = useStyles();
 
-    console.log(log);
     const renderItems = log.map(item => {
         return (
-            <LogItem key={item.key} result={item} />
+            <LogItem key={item.fdcId} item={item} deleteFoodHandler={deleteFoodHandler} />
+
         );
     });
 

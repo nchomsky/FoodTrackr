@@ -11,11 +11,10 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchList = ({ results, onLogHandler }) => {
     const classes = useStyles();
-    console.log(results);
     const renderItems = results.map(result => {
         return (
-            <Grid item className={classes.marginItem} >
-                <SearchItem key={result.key} result={result} onLogHandler={onLogHandler} />
+            <Grid item key={result.fdcId} className={classes.marginItem} >
+                <SearchItem result={result} onLogHandler={onLogHandler} />
             </Grid>
         );
     });
