@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     typographyStyles: {
-        flex: 1
+        flex: 1,
+        textAlign: "center"
     },
     buttonStyles: {
         marginRight: theme.spacing(2)
