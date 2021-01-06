@@ -2,23 +2,21 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import Header from './Header';
 import Content from './Content';
+// import { makeStyles } from '@material-ui/core/styles';
+
+// const useStyles = makeStyles(() => ({
+//     root: {
+//         backgroundImage: `url(${process.env.PUBLIC_URL + "/images/vegetables.jpg"})`,
+//         background: "linear-gradient(90deg, rgba(black, 0.4), rgba(black, 0.4))",
+//         backgroundRepeat: "no-repeat",
+//         backgroundSize: "cover",
+//         backgroundAttachment: "fixed",
+//         minHeight: "100vh",
+//     }
+// }));
 
 const App = () => {
-
-    // const APP_ID = "51e4a2e2";
-    // const APP_KEY = "d8832295b6e9acdaf80a20f2aeeeaaf3";
-
-    // useEffect(() => {
-    //     getFood();
-    // }, []);
-
-    // const getFood = async () => {
-    //     const response = await fetch(
-    //         `https://api.edamam.com/api/food-database/v2/parser?ingr=red%20apple&app_id=${APP_ID}&app_key=${APP_KEY}`
-    //     );
-    //     const data = await response.json();
-    //     console.log(data);
-    // };
+    // const classes = useStyles();
 
     return (
         <div>
@@ -26,7 +24,7 @@ const App = () => {
                 <Grid item>
                     <Header />
                 </Grid>
-                <Grid item container>
+                <Grid item container >
                     <Grid item xs={1} sm={2} />
                     <Grid item xs={10} sm={8}>
                         <Content />

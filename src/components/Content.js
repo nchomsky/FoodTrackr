@@ -5,8 +5,11 @@ import SearchList from './search/SearchList';
 import FoodLog from './food/FoodLog';
 import foodData from '../api/foodData';
 
+
 // Food Data Central API Key: 
 const KEY = 'D258W2mIJWkYDvyAveLwcy5iDVPATxZcB6N8ueSX';
+
+
 const Content = () => {
 
     // Multiple useState hooks is best practice
@@ -46,7 +49,7 @@ const Content = () => {
     console.log(foodLog);
 
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} >
             <Grid item xs={12} sm={6}>
                 <SearchBar onFormSubmit={onSearchSubmit} />
                 <SearchList results={searchResults} onLogHandler={logFoodHandler} />

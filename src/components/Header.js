@@ -18,8 +18,8 @@ const Header = () => {
             <AppBar position="static">
                 <Toolbar>
                     <Typography className={classes.typographyStyles}>FoodTrackr</Typography>
-                    <Button className={classes.buttonStyles} variant="outlined">Sign In</Button>
-                    <Button variant="contained" color="secondary">Sign Up</Button>
+                    {/* <Button className={classes.buttonStyles} variant="outlined">Sign In</Button>
+                    <Button variant="contained" color="secondary">Sign Up</Button> */}
                 </Toolbar>
             </AppBar>
         </div>
