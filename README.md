@@ -5,6 +5,7 @@ A food and meal tracker app that will allow you to track your meals and macros (
 ## Features Currently Implemented
 * Allows user to lookup a food/ingredient
 * Allows user to add Food to a log
+* Allows user to delete Food from a log
 
 ## Technology Currently Used
 * React
