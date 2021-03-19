@@ -1,4 +1,4 @@
-# FoodTrackr (W.I.P.)
+# FoodTrackr
 
 A food and meal tracker app that will allow you to track your meals and macros (Protein, Fat, Carbohydrates).
 
