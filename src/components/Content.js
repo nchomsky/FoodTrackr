@@ -33,7 +33,7 @@ const Content = () => {
 
     const deleteFoodHandler = (food) => {
         const array = [...foodLog];
-        console.log('%c Array in Delete Handler', 'color: red; font-weight: bold;');
+        //console.log('%c Array in Delete Handler', 'color: red; font-weight: bold;');
         console.log(array);
         const index = array.indexOf(food);
         if (index !== -1) {
