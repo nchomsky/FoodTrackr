@@ -17,7 +17,7 @@ const LogList = ({ log, deleteFoodHandler }) => {
 
     const renderItems = log.map(item => {
         return (
-            // Need to switch the key out for something that is unqiue as each key should be a unique value
+            
             <LogItem key={uuidv4()} item={item} deleteFoodHandler={deleteFoodHandler} />
 
         );
